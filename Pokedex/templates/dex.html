@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>{{name.capitalize()}}</title>
+    <link rel="stylesheet" href="/static/page.css" media="screen">
+<link rel="stylesheet" href="/static/site.css" media="screen">
+<link rel="stylesheet" href="/static/dex.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/static/query.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/static/page.js" defer=""></script>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Om-Mishra7/pokeapi_sprites/master/sprites/{{name}}.png">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "ProjectRexa"
+}</script>
+</head>
+</head>
+<body class="u-body u-xl-mode" data-lang="en"><header class="u-black u-header" id="sec-82b8" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
+  <h1 class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-default u-text-1">National Dex</h1>
+  <form action="#" method="get" class="u-align-center-xs u-border-1 u-border-white u-radius-10 u-search u-search-right u-white u-search-1">
+    <button class="u-search-button" type="submit">
+      <span class="u-search-icon u-spacing-10 u-text-black">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9dab"></use></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-9dab" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+      </span>
+    </button>
+    <input class="u-custom-font u-font-arial u-search-input" type="search" name="search" value="" placeholder="Search...">
+  </form>
+  <img class="u-align-center u-hidden-md u-hidden-sm u-hidden-xs u-image u-image-default u-preserve-proportions u-image-1" src="/static/assets/icon.png" height="50px" width="50px">
+</div></header>
+<section class="u-black u-clearfix u-section-1" id="sec-4973">
+<div class="u-clearfix u-sheet u-sheet-1">
+  <div class="u-border-2 u-border-grey-dark-1 u-container-style u-group u-radius-10 u-shape-round u-white u-group-1">
+    <div class="u-container-layout u-container-layout-1">
+      <img class="u-expanded-height-md u-expanded-height-sm u-expanded-height-xs u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src={{link}} alt="" data-image-width="50" data-image-height="46">
+      <p class="u-align-center u-text u-text-default u-text-1">
+        <span class="u-text-grey-90">{{name.upper()}}&nbsp;</span>
+        <span class="u-text-grey-60">#{{id}}</span>
+      </p>
+    </div>
+  </div>
+  <img class="u-align-center u-image u-image-round u-preserve-proportions u-image-2" src="https://raw.githubusercontent.com/Om-Mishra7/pokeapi_sprites/master/sprites/{{name}}.png" alt="">
+  <div class="u-container-style u-custom-color-3 u-group u-radius-10 u-shape-round u-group-2">
+    <div class="u-container-layout u-container-layout-2">
+      <img class="u-image u-image-circle u-image-3" src="/static/assets/{{type_2}}.png" alt="">
+      <img class="u-image u-image-circle u-preserve-proportions u-image-4" src="/static/assets/{{type_1}}.png" alt="">
+      <p class="u-text u-text-default u-text-2">Ty​pe&nbsp; -</p>
+      <p class="u-align-center u-text u-text-default-lg u-text-default-xl u-text-3">Heig​ht - <span style="font-weight: 700;">{{height/10}}&nbsp;</span>m
+      </p>
+      <p class="u-align-center-md u-align-center-sm u-align-center-xs u-align-right-lg u-align-right-xl u-text u-text-default-lg u-text-default-xl u-text-4">Weight - <b>{{weight/10}}</b>&nbsp;kg
+      </p>
+    </div>
+  </div>
+  <img class="u-image u-image-circle u-preserve-proportions u-image-5" src="/static/assets/left.png" alt="" data-image-width="128" data-image-height="128" data-href="/?search={{id-1}}">
+  <img class="u-image u-image-circle u-preserve-proportions u-image-6" src="/static/assets/right.png" alt="" data-image-width="128" data-image-height="128" data-href="/?search={{id+1}}">
+  <div class="u-black u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-container-style u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-3">
+    <div class="u-container-layout u-container-layout-3">
+      <p class="u-align-center u-text u-text-5">{{description}}</p>
+    </div>
+  </div>
+  <div class="u-clearfix u-expanded-width-xs u-layout-wrap u-layout-wrap-1">
+    <div class="u-layout">
+      <div class="u-layout-row">
+        <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
+          <div class="u-container-layout u-container-layout-4">
+            <div class="u-clearfix u-custom-html u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-custom-html-1">
+              <label><b>HP - {{hp}} <meter value="{{hp}}" min="0" low="50" high="130" max="200" optimum="20"></meter></b>
+              </label><b>
+                <label> Speed - {{speed}} <meter value="{{speed}}" min="0" low="50" high="130" max="200" optimum="20"> 80/200 </meter>
+                </label>
+                <label> Attack - {{attack}} <meter value="{{attack}}" min="0" low="50" high="130" max="200" optimum="20"> 150/200 </meter>
+                </label>
+                <label> Defence - {{defence}} <meter value="{{defence}}" min="0" low="60" high="180" max="200" optimum="20"> 20/200 </meter>
+                </label>
+                <label> Special Attack - {{special_attack}} <meter value="{{special_attack}}" min="0" low="60" high="180" max="200" optimum="20"> 150/200 </meter>
+                </label>
+                <label> Special Defence - {{special_defence}}</label></b>
+              <meter value="{{special_defence}}" min="0" low="60" high="180" max="200" optimum="20"> 150/200 </meter>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="u-align-center u-text u-text-6">The Project was last update for the game "<a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Legends:_Arceus" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">Legends Arceus</a>"<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </p>
+</div>
+</section>
+<footer class="u-align-center u-clearfix u-footer u-grey-60 u-footer" id="sec-3328"><div class="u-clearfix u-sheet u-sheet-1">
+  <p class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-text u-text-1">Pokémon, Pikachu and all other Pokémon characters © 1995-2022 Nintendo, GAME FREAK and Creatures, Inc.&nbsp;<br>&nbsp;No infringement is intended.<br>
+    <br> © ProjectRexa<br>Source Code
+  </p>
+</div></footer>
+  
+</body></html>
