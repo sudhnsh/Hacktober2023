@@ -1,0 +1,215 @@
+﻿<Window x:Class="WeatherApp.View.WeatherWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp.View"
+        xmlns:vm="clr-namespace:WeatherApp.ViewModel"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="WeatherWindow" Height="390" Width="670"
+        Background="#171835"
+        WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <vm:WeatherVM x:Key="vm"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource vm}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#181735" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="'Know Weather'"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontFamily="#Segoe UI"
+                       FontSize="20"
+                       FontWeight="Light"/>
+
+            <Button x:Name="Close" Margin="182,14,29,10" Grid.Column="1" Click="Close_Click"
+                    Content="close"
+                    Foreground="white"
+                    BorderBrush="#181735"
+                    Cursor="Hand"
+                    FontSize="10" Height="26" Width="124">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="100" Height="25" CornerRadius="12"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Background='#1718'>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="50" Height="50" Source="../Images/weather-app.png" 
+                           Margin="25,15,20,15"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                    <TextBlock Text="Search for a city:" 
+                               Foreground="White" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontFamily="Fonts/#Dosis"
+                               FontWeight="Medium"
+                               FontSize="20"/>
+                </StackPanel>
+                
+                <TextBox Text="{Binding Query, UpdateSourceTrigger=PropertyChanged}" Height="32" Width="272"
+                         HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button Margin="0,10,0,10"
+                    Command="{Binding SearchCommand}"
+                    CommandParameter="{Binding Query}"
+                    Content="Search"
+                    Foreground="white"
+                    BorderBrush="#181735"
+                    Cursor="Hand"
+                    FontSize="10" Height="26" Width="124">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FE6584"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF4C70"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="25" CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <ListView ItemsSource="{Binding Cities}"
+                          SelectedValue="{Binding SelectedCity}"
+                          Background="#181735"
+                          Foreground="White"
+                          BorderBrush="#181735" Margin="0,0,0,25">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding LocalizedName}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <StackPanel Margin="359,-38,0,108" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
+                    Panel.ZIndex="-1">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-127.793"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Border Width="196"
+                    Height="25"
+                    Background="#3DDDC2"
+                    Margin="130,0,0,10"
+                    CornerRadius="20"/>
+            <Border Width="196"
+                    Height="25"
+                    Background="#FC6586"
+                    Margin="155,0,0,10"
+                    CornerRadius="20"/>
+            <Border Width="196"
+                    Height="25"
+                    Background="#383560"
+                    Margin="100,0,0,0"
+                    CornerRadius="20"/>
+        </StackPanel>
+        <StackPanel Margin="317,103,42,-3" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="51.218"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Border Width="196"
+                    Height="25"
+                    Background="#3DDDC2"
+                    Margin="150,0,0,10"
+                    CornerRadius="20"/>
+            <Border Width="196"
+                    Height="25"
+                    Background="#FC6586"
+                    Margin="110,0,0,10"
+                    CornerRadius="20"/>
+            <Border Width="195"
+                    Height="25"
+                    Background="#383560"
+                    Margin="140,0,0,0"
+                    CornerRadius="20"/>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2"
+              Background="#4392f1"
+              DataContext="{Binding Condition}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="0,10">
+                <TextBlock DataContext="{StaticResource vm}"
+                           Text="{Binding SelectedCity.LocalizedName}"
+                           Foreground="#f4f4f8"
+                           FontSize="20"
+                           Margin="20,0"/>
+                <TextBlock Text="{Binding WeatherText}"
+                           Foreground="#f4f4f8"
+                           FontSize="18"
+                           Margin="20,0"/>
+            </StackPanel>
+            <TextBlock Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Text="{Binding Temperature.Metric.Value, StringFormat={}{0}°C}"
+                       Foreground="#f4f4f8"
+                       FontSize="30"
+                       Margin="20,0"/>
+        </Grid>
+
+    </Grid>
+
+</Window>
